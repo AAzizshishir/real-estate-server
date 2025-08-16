@@ -240,7 +240,7 @@ async function run() {
     });
 
     // ✅ Get Specific property
-    app.get("/properties/:id", verifyToken, async (req, res) => {
+    app.get("/properties/:id", async (req, res) => {
       const id = req.params.id;
 
       try {
