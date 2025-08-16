@@ -681,7 +681,7 @@ async function run() {
     // Reviews
 
     // Get all reviews
-    app.get("/reviews", verifyToken, async (req, res) => {
+    app.get("/reviews", async (req, res) => {
       try {
         const reviews = await reviewsCollection.find().toArray();
         res.send(reviews);
@@ -716,7 +716,7 @@ async function run() {
     });
 
     // ✅ Get reviews by propertyId
-    app.get("/reviews/:propertyId", verifyToken, async (req, res) => {
+    app.get("/reviews/:propertyId", async (req, res) => {
       const propertyId = req.params.propertyId;
       const reviews = await reviewsCollection
         .find({ propertyId })
