@@ -25,7 +25,7 @@ try {
 const app = express();
 const port = process.env.PORT || 5000;
 
-const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.pacddgd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
+const uri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@cluster0.gnu7yvd.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0`;
 
 // Middlewares
 app.use(cors());
