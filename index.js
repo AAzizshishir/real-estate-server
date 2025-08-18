@@ -50,6 +50,7 @@ async function run() {
     const wishlistCollection = database.collection("wishlists");
     const reviewsCollection = database.collection("reviews");
     const offersCollection = database.collection("offers");
+    const contactsCollection = database.collection("contacts");
 
     app.post("/jwt", async (req, res) => {
       const user = req.body;
@@ -836,6 +837,13 @@ async function run() {
           .status(500)
           .send({ message: "Failed to load top agents", error: error.message });
       }
+    });
+
+    // ✅ POST API to add a property
+    app.post("/contact", async (req, res) => {
+      const message = req.body;
+      const result = await contactsCollection.insertOne(message);
+      res.send(result);
     });
 
     // await client.db("admin").command({ ping: 1 });
